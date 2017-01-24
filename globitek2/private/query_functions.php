@@ -236,7 +236,7 @@
       exit;
     }
   }
-
+  
   // Edit a territory record
   // Either returns true or an array of errors
   function update_territory($territory) {
@@ -554,6 +554,27 @@
       db_close($db);
       exit;
     }
+  }
+  
+  function delete_user($user)
+  {
+  	global $db;
+  	echo 'Hello';
+  	$sql = "DELETE FROM users ";
+  	$sql .= "WHERE id = ";
+  	$sql .= "'" . mysqli_real_escape_string($db, $user['id']) . "' ";
+  	
+  	$result = db_query($db, $sql);
+  	if($result)
+  	{
+  		return true;
+  	}
+  	else
+  	{
+  		echo db_error($db);
+  		db_close($db);
+  		exit;
+  	}
   }
 
   // Edit a user record
