@@ -172,7 +172,7 @@
   function validate_territory($territory, $errors=array()) 
   {
     // TODO add validations
-    //echo 'Hello';
+    
     if (is_blank($territory['name'])) 
     {
       $errors[] = "Name cannot be blank.";
@@ -241,10 +241,8 @@
   // Either returns true or an array of errors
   function update_territory($territory) {
     global $db;
-	echo 'Hello';
     $errors = validate_territory($territory);
     if (!empty($errors)) {
-      echo 'Bye';
       return $errors;
     }
     echo $errors;
