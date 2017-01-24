@@ -1,15 +1,12 @@
 <?php
   require_once('../private/initialize.php');
-
   if(!isset($_GET['id'])) {
     // Redirect if no ID provided
     redirect_to('territories.php');
   }
-
   // Find salesperson using id in query string
   $id = $_GET['id'];
   $salespeople_result = find_salesperson_by_id($id);
-
   $row_count = db_num_rows($salespeople_result);
   if($row_count > 0) {
     // No loop needed, there will be only one result
@@ -53,7 +50,6 @@
         }
         db_free_result($territories_result);
         echo "</ul>";
-
       ?>
     </div>
 

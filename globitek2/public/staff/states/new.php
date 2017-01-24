@@ -13,7 +13,6 @@ if(is_post_request()) {
   // Confirm that values are present before accessing them.
   if(isset($_POST['name'])) { $state['name'] = h($_POST['name']); }
   if(isset($_POST['code'])) { $state['code'] = h($_POST['code']); }
-  if
 
   $result = insert_state($state);
   if($result === true) {
@@ -34,7 +33,6 @@ if(is_post_request()) {
 
    <?php echo display_errors($errors); ?>
 
-  <!-- TODO add form -->
   
   <form action="new.php" method="post">
     Name:<br />

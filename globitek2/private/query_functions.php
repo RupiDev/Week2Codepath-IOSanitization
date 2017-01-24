@@ -392,6 +392,7 @@
     }
   }
 
+
   // Edit a salesperson record
   // Either returns true or an array of errors
   function update_salesperson($salesperson) {
@@ -423,7 +424,6 @@
       exit;
     }
   }
-  
   
 
   // To find territories, we need to use the join table.

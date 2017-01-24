@@ -13,7 +13,6 @@
 
   <?php
     $salespeople_result = find_all_salespeople();
-
     echo "<table id=\"salespeople\" style=\"width: 500px;\">";
     echo "<tr>";
     echo "<th>First name</th>";
@@ -27,11 +26,9 @@
       echo "<td>" . $salesperson['last_name'] . "</td>";
       echo "<td>";
       echo "<a href=\"show.php?id=" . u($salesperson['id']) . "\">Show</a>";
-      //echo "<a href=\"#add_a_url\">Show</a>";
       echo "</td>";
       echo "<td>";
       echo "<a href=\"edit.php?id=" . u($salesperson['id']) . "\">Edit</a>";
-      //echo "<a href=\"#add_a_url\">Edit</a>";
       echo "</td>";
       echo "</tr>";
     } // end while $salesperson
