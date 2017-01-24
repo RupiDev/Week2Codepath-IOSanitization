@@ -51,14 +51,14 @@
     {
       $errors[] = "Name cannot be blank.";
     } 
-    elseif (!has_length($user['first_name'], array('min' => 2, 'max' => 255))) 
+    elseif (!has_length($state['name'], array('min' => 2, 'max' => 255))) 
     {
-      $errors[] = "First name must be between 2 and 255 characters.";
+      $errors[] = "Name must be between 2 and 255 characters.";
     } 
     // custom validation
-    elseif (!isStateNameValid($user['first_name'])) 
+    elseif (!isStateNameValid($state['name'])) 
     {
-      $errors[] = "First name should only have the alphabet and a space";
+      $errors[] = "Name should only have the alphabet and a space";
     }
     
 
@@ -66,12 +66,12 @@
     {
       $errors[] = "Code cannot be blank.";
     } 
-    elseif (!has_length($user['last_name'], array('min' => 2, 'max' => 255))) 
+    elseif (!has_length($state['code'], array('min' => 2, 'max' => 255))) 
     {
       $errors[] = "Code must be between 2 and 255 characters.";
     }
     // custom validation
-    elseif (!isCode($user['last_name']))
+    elseif (!isCode($state['code']))
     {
       $errors[] = "Code should only have the alphabet and a space";
     }
@@ -345,7 +345,7 @@
       $errors[] = "Email must be a valid format.";
     }
     // custom validation 
-    elseif (checkSalespersonEmail($email, $db))
+    elseif (checkSalespersonEmail($salesperson['email'], $db))
     {
       $errors[] = "Email can't be a duplicate email";
     }
@@ -364,6 +364,7 @@
     global $db;
     
     $errors = validate_salesperson($salesperson);
+    print($errors);
     if (!empty($errors)) {
       return $errors;
     }

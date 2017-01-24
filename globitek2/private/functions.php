@@ -82,7 +82,7 @@
   // making it so that the territory only contains characters and a space
   function isTerritory($territory)
   {
-  	return preg_match('/\A[A-Za-z\s]+\Z/', $code);
+  	return preg_match('/\A[A-Za-z\s]+\Z/', $territory);
   }
   
   // Custom Validation
